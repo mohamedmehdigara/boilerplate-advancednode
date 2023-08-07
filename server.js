@@ -8,13 +8,15 @@ const app = express();
 
 fccTesting(app); //For FCC testing purposes
 app.set('view engine', 'pug');
+app.set('views', './views/pug');
+
 
 app.use('/public', express.static(process.cwd() + '/public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.route('/').get((req, res) => {
-res.render('pug');
+app.get('/',(req, res) => {
+res.render('index');
 });
 
 const PORT = process.env.PORT || 3000;

@@ -19,3 +19,7 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log('Listening on port ' + PORT);
 });
+
+app.set('view engine', 'pug');
+app.set('views', './views/pug');
+res.render('index');

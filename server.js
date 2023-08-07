@@ -22,4 +22,6 @@ app.listen(PORT, () => {
 
 app.set('view engine', 'pug');
 app.set('views', './views/pug');
-res.render('index');
+app.route('/').get((req, res) => {
+  res.render('index');
+});
